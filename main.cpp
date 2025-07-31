@@ -8,6 +8,8 @@
 #include "Fibonacci.h"
 #include "LinkedList.h"
 #include "AddTwoNumbers.h"
+#include <cfloat>
+#include <climits>
 
 using namespace std;
 
@@ -29,10 +31,13 @@ void testAddTwoNumbers() {
 
     ListNode* res = test(l1, l2);
     printListNodes(res);
+    delete res;
 }
 
 int main () {
 
+	// Sorting Algorithm i.e Bubble, Insertion, Merge, Quick, and Selection
+	/*
 	vector<int> arr = {10, 5, 8, 9, 1, 5, 6, 3, 0, 4};
 	unique_ptr<Sort> s = make_unique<Bubble>(arr);
 	s->sort();
@@ -40,8 +45,13 @@ int main () {
 	    cout << val << " ";
 	}
 	cout << endl;
-	//Fibonacci Fibonacci(15);
-	//testAddTwoNumbers();
+	*/
+	
+	// Fibonacci
+	// Fibonacci Fibonacci(15);
+
+	// Add two numbers 
+	// testAddTwoNumbers();
 	
 	
 	return 0;

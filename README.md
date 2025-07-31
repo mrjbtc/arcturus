@@ -1,7 +1,7 @@
 # [Arcturus](https://en.wikipedia.org/wiki/Arcturus) 
 
 
-> Common programs to practice and learn e.g sorting algorithms, etc.
+> Fundamental programming challenges to practice and master, such as sorting algorithms and other core problem-solving techniques.
  
 ## Test 
 Update the main function `main.cpp` to call specific program e.g
