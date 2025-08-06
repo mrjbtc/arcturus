@@ -32,17 +32,19 @@ using namespace std;
  * Now it’s sorted!
  * 
  */ 
-void Selection::sort() {
-    vector<int>& arr = Sort::arr;
-	size_t size = arr.size();
-    
-    for (size_t i = 0; i < size - 1; ++i) {
-    	size_t minIdx = i;
-        for (size_t j = i+1; j < size; ++j) {
-            if (arr[j] < arr[minIdx]) {
-            	minIdx = j;
+namespace NS_SORTING {
+    void Selection::sort() {
+        vector<int>& arr = Sort::arr;
+    	size_t size = arr.size();
+        
+        for (size_t i = 0; i < size - 1; ++i) {
+        	size_t minIdx = i;
+            for (size_t j = i+1; j < size; ++j) {
+                if (arr[j] < arr[minIdx]) {
+                	minIdx = j;
+                }
             }
+            std::swap(arr[i], arr[minIdx]);
         }
-        std::swap(arr[i], arr[minIdx]);
     }
 }

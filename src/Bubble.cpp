@@ -35,22 +35,25 @@ using namespace std;
  * Repeat until fully sorted:
  * Final array: [1, 2, 4, 5, 8]
  * 
- */ 
-void Bubble::sort() {
-    vector<int>& arr = Sort::arr;
-    size_t size = arr.size();
-    bool swapped;
-    
-    for (size_t i = 0; i < size - 1; ++i) {
-        swapped = false;
-        for (size_t j = 0; j < size - 1 - i; ++j) {
-            if (arr[j] > arr[j + 1]) {
-                std::swap(arr[j], arr[j + 1]);
-                swapped = true;
+ */
+
+namespace NS_SORTING { 
+    void Bubble::sort() {
+        vector<int>& arr = Sort::arr;
+        size_t size = arr.size();
+        bool swapped;
+        
+        for (size_t i = 0; i < size - 1; ++i) {
+            swapped = false;
+            for (size_t j = 0; j < size - 1 - i; ++j) {
+                if (arr[j] > arr[j + 1]) {
+                    std::swap(arr[j], arr[j + 1]);
+                    swapped = true;
+                }
             }
-        }
-        if (!swapped) {
-            break;  // everything is sorted
+            if (!swapped) {
+                break;  // everything is sorted
+            }
         }
     }
 }

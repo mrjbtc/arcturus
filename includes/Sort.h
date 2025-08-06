@@ -5,19 +5,22 @@
 
 using namespace std;
 
-class Sort {
+namespace NS_SORTING {
 
-private:
-    Sort();
+    class Sort {
 
-protected:
-    vector<int>& arr;
+    private:
+        Sort();
 
-public:
-    Sort(vector<int>& arr) : arr(arr){}
+    protected:
+        vector<int>& arr;
 
-    virtual void sort() = 0;  // pure virtual function
-    virtual ~Sort() = default;
-};
+    public:
+        Sort(vector<int>& arr) : arr(arr){}
+
+        virtual void sort() = 0;  // pure virtual function
+        virtual ~Sort() = default;
+    };
+}
 
 #endif

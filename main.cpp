@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <chrono>
+
 #include "Bubble.h"
 #include "Selection.h"
 #include "Insertion.h"
@@ -8,52 +10,49 @@
 #include "Fibonacci.h"
 #include "LinkedList.h"
 #include "AddTwoNumbers.h"
-#include <cfloat>
-#include <climits>
+#include "BinaryTree.h"
+
+#include <thread>
+#include <functional>
 
 using namespace std;
+using namespace std::chrono;
 
-void testAddTwoNumbers() {
-	
-	// test case 1
-	ListNode* l1 = new ListNode(2, new ListNode(4, new ListNode(3))); // [2, 4, 3]
-    ListNode* l2 = new ListNode(5, new ListNode(6, new ListNode(4))); // [5, 6, 4]
-
-    // test case 2
-    //ListNode* l1 = new ListNode(0);
-    //ListNode* l2 = new ListNode(0);
-
-    // test case 3
-    // [9,9,9,9,9,9,9]
-    // [9,9,9,9]
-    // ListNode* l1 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))));
-    // ListNode* l2 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
-
-    ListNode* res = test(l1, l2);
-    printListNodes(res);
-    delete res;
+vector<int> random_n(size_t limit=10000) {
+    vector<int> n;
+    srand(time(0));
+    for (size_t i = 0; i < limit; i++) {
+        n.push_back(rand());
+    }
+    return n;
 }
 
 int main () {
 
 	// Sorting Algorithm i.e Bubble, Insertion, Merge, Quick, and Selection
 	/*
-	vector<int> arr = {10, 5, 8, 9, 1, 5, 6, 3, 0, 4};
-	unique_ptr<Sort> s = make_unique<Bubble>(arr);
+	vector<int> arr = random_n();
+	auto start_s_clock = steady_clock::now();
+	cout << "[Dataset size]: " << arr.size() << endl;
+
+	unique_ptr<NS_SORTING::Sort> s = make_unique<NS_SORTING::Merge>(arr);
 	s->sort();
 	for (int val: arr) {
 	    cout << val << " ";
 	}
-	cout << endl;
-	*/
-	
-	// Fibonacci
-	// Fibonacci Fibonacci(15);
 
-	// Add two numbers 
-	// testAddTwoNumbers();
+	auto end_s_clock = steady_clock::now();
+	auto clock_diff = end_s_clock - start_s_clock;
+	cout << endl << "[Duration]: " << duration <double, milli> (clock_diff).count() << " ms" << endl;
+	*/
+
 	
-	
+	// NS_FIBONACCI::test();
+
+	// NS_ADD_TWO_NUMBERS::test();
+
+	// NS_BinaryTree::test();
+
 	return 0;
 }
 

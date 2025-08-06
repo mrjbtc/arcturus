@@ -5,13 +5,15 @@
 
 using namespace std;
 
-class Insertion : public Sort {
-public:
-    vector<int>& arr = Sort::arr;
-    
-    Insertion (vector<int>& arr) : Sort(arr) {}
+namespace NS_SORTING {
+    class Insertion : public Sort {
+    public:
+        vector<int>& arr = Sort::arr;
+        
+        Insertion (vector<int>& arr) : Sort(arr) {}
 
-    void sort() override;
-};
+        void sort() override;
+    };
+}
 
 #endif

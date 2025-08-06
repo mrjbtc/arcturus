@@ -1,20 +1,25 @@
 #ifndef ADD_TWO_NUMBERS_H
 #define ADD_TWO_NUMBERS_H
 
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
+namespace NS_ADD_TWO_NUMBERS {
 
-void printListNodes(ListNode* ln);
-ListNode* test(ListNode* l1, ListNode* l2);
+    struct Node {
+        int val;
+        Node *next;
+        Node() : val(0), next(nullptr) {}
+        Node(int x) : val(x), next(nullptr) {}
+        Node(int x, Node *next) : val(x), next(next) {}
+    };
 
-class AddTwoNumbers {
-public:
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
-};
+    void printListNodes(Node* ln);
+    Node* test(Node* l1, Node* l2);
+
+    class AddTwoNumbers {
+    public:
+        Node* addTwoNumbers(Node* l1, Node* l2);
+    };
+
+    void test();
+}
 
 #endif

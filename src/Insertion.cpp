@@ -41,18 +41,21 @@ using namespace std;
  * Insert 3 before 4 → [1, 2, 3, 4, 5, 6] 🎉
  * 
  */ 
-void Insertion::sort() {
-    vector<int>& arr = Sort::arr;
-    
-    size_t size = arr.size();
-    for (size_t i = 1; i < size; ++i) {
-        int item = arr[i]; // start from second item
-        size_t x = i - 1; // previous index
 
-        while (x >= 0 && arr[x] > item) {
-			arr[x + 1] = arr[x];
-        	x--;
+namespace NS_SORTING {
+    void Insertion::sort() {
+        vector<int>& arr = Sort::arr;
+        
+        size_t size = arr.size();
+        for (size_t i = 1; i < size; ++i) {
+            int item = arr[i]; // start from second item
+            size_t x = i - 1; // previous index
+
+            while (x >= 0 && arr[x] > item) {
+    			arr[x + 1] = arr[x];
+            	x--;
+            }
+            arr[x + 1] = item;
         }
-        arr[x + 1] = item;
     }
 }

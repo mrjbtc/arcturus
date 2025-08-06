@@ -35,52 +35,58 @@
 
 using namespace std;
 
-ListNode* AddTwoNumbers::addTwoNumbers(ListNode* l1, ListNode* l2) {
-    ListNode init;
-    ListNode* current = &init;
-    int carry = 0;
+namespace NS_ADD_TWO_NUMBERS {
 
-    while (l1 || l2 || carry) {
-        int sum = carry;
+    Node* AddTwoNumbers::addTwoNumbers(Node* l1, Node* l2) {
+        Node init;
+        Node* current = &init;
+        int carry = 0;
 
-        if (l1) {
-            sum += l1->val;
-            l1 = l1->next;
+        while (l1 || l2 || carry) {
+            int sum = carry;
+
+            if (l1) {
+                sum += l1->val;
+                l1 = l1->next;
+            }
+
+            if (l2) {
+                sum += l2->val;
+                l2 = l2->next;
+            }
+
+            carry = sum / 10;
+            current->next = new Node(sum % 10);
+            current = current->next;
         }
+        cout << endl;
+        delete l1;
+        delete l2;
+        return init.next;
+    }
 
-        if (l2) {
-            sum += l2->val;
-            l2 = l2->next;
+    void printListNodes(Node* ln) {
+        while (ln) {
+            cout << ln->val << " -> ";
+            ln = ln->next;
         }
-
-        carry = sum / 10;
-        current->next = new ListNode(sum % 10);
-        current = current->next;
-        cout << " current: " << current << " current->val: " << current->val << " init.next: " << init.next << " init.val: " << init.val << " &init: " << &init;
     }
-    cout << endl;
-    delete l1;
-    delete l2;
-    return init.next;
-}
 
-void printListNodes(ListNode* ln) {
-    while (ln) {
-        cout << ln->val << " -> ";
-        ln = ln->next;
+    void test() {
+
+        Node* l1 = new Node(2, new Node(4, new Node(3))); // [2, 4, 3]
+        Node* l2 = new Node(5, new Node(6, new Node(4))); // [5, 6, 4]
+        
+        cout << "Linked List 1: ";
+        printListNodes(l1);
+        cout << endl << "Linked List 2: ";
+        printListNodes(l2);
+
+
+        unique_ptr<AddTwoNumbers> addTwo = make_unique<AddTwoNumbers>();
+        Node* results = addTwo->addTwoNumbers(l1, l2);
+        cout << "result: ";
+        printListNodes(results);
     }
-    cout << "nullptr" << endl;
-}
 
-ListNode* test(ListNode* l1, ListNode* l2) {
-    
-    cout << "l1: ";
-    printListNodes(l1);
-    cout << "l2: ";
-    printListNodes(l2);
-
-    cout << "result: ";
-
-    unique_ptr<AddTwoNumbers> addTwo = make_unique<AddTwoNumbers>();
-    return addTwo->addTwoNumbers(l1, l2);
 }

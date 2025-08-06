@@ -5,15 +5,17 @@
 
 using namespace std;
 
-class Heap : public Sort {
-private:
-	void heapify();
-public: 
-	vector<int>& arr = Sort::arr;
+namespace NS_SORTING {
+	class Heap : public Sort {
+	private:
+		void heapify();
+	public: 
+		vector<int>& arr = Sort::arr;
 
-	Heap (vector<int>& arr) : Sort(arr) {}
+		Heap (vector<int>& arr) : Sort(arr) {}
 
-	void sort() override; 
-};
+		void sort() override; 
+	};
+}
 
 #endif

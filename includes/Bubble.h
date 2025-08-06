@@ -5,13 +5,15 @@
 
 using namespace std;
 
-class Bubble : public Sort {
-public:
-    vector<int>& arr = Sort::arr;
-    
-    Bubble (vector<int>& arr) : Sort(arr) {}
-    
-    void sort() override;
-};
+namespace NS_SORTING {
+    class Bubble : public Sort {
+    public:
+        vector<int>& arr = Sort::arr;
+        
+        Bubble (vector<int>& arr) : Sort(arr) {}
+        
+        void sort() override;
+    };
+}
 
 #endif

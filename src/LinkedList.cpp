@@ -2,6 +2,7 @@
 #include "LinkedList.h"
 
 using namespace std;
+using namespace NS_LinkedList;
 
 void LinkedList::printList(Node* head) {
 	Node *temp = head;
