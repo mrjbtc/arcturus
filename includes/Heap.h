@@ -8,13 +8,14 @@ using namespace std;
 namespace NS_SORTING {
 	class Heap : public Sort {
 	private:
-		void heapify();
+		static void heapify(vector<int> &arr, size_t size, size_t nodeIdx);
 	public: 
 		vector<int>& arr = Sort::arr;
 
 		Heap (vector<int>& arr) : Sort(arr) {}
 
-		void sort() override; 
+		void sort() override;
+		static void printArr(vector<int>& arr);
 	};
 }
 

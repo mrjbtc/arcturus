@@ -10,8 +10,6 @@ void LinkedList::printList(Node* head) {
 		cout << temp->val << " -> ";
 		temp = temp->next;
 	}
-	cout << "nullptr" << endl;
-
 }
 
 void LinkedList::removeList(Node*& head) {
