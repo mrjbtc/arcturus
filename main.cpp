@@ -6,11 +6,15 @@
 #include "Selection.h"
 #include "Insertion.h"
 #include "Merge.h"
+#include "Heap.h"
 #include "Quick.h"
 #include "Fibonacci.h"
 #include "LinkedList.h"
-#include "AddTwoNumbers.h"
 #include "BinaryTree.h"
+
+// leetcode
+#include "AddTwoNumbers.h"
+#include "ReverseNodesInKGroup.h"
 
 #include <thread>
 #include <functional>
@@ -31,28 +35,29 @@ int main () {
 
 	// Sorting Algorithm i.e Bubble, Insertion, Merge, Quick, and Selection
 	/*
-	vector<int> arr = random_n();
-	auto start_s_clock = steady_clock::now();
-	cout << "[Dataset size]: " << arr.size() << endl;
+	vector<int> arr = {10,15,8,11,3,6}; // random_n(100);
 
-	unique_ptr<NS_SORTING::Sort> s = make_unique<NS_SORTING::Merge>(arr);
+	unique_ptr<NS_SORTING::Sort> s = make_unique<NS_SORTING::Heap>(arr);
+	
+	cout << "Original" << endl;
+	NS_SORTING::Heap::printArr(arr);
+	
 	s->sort();
-	for (int val: arr) {
-	    cout << val << " ";
-	}
-
-	auto end_s_clock = steady_clock::now();
-	auto clock_diff = end_s_clock - start_s_clock;
-	cout << endl << "[Duration]: " << duration <double, milli> (clock_diff).count() << " ms" << endl;
+	
+	cout << "Sorted" << endl;
+	NS_SORTING::Heap::printArr(arr);
 	*/
 
-	
 	// NS_FIBONACCI::test();
 
 	// NS_ADD_TWO_NUMBERS::test();
 
 	// NS_BinaryTree::test();
 
+	// NS_REVERSE_NODE_K_GROUP::test();
+
+	NS_LinkedList::test();
+	
 	return 0;
 }
 

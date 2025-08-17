@@ -2,20 +2,52 @@
 #include "LinkedList.h"
 
 using namespace std;
-using namespace NS_LinkedList;
 
-void LinkedList::printList(Node* head) {
-	Node *temp = head;
-	while(temp) {
-		cout << temp->val << " -> ";
-		temp = temp->next;
+namespace NS_LinkedList {
+
+	void LinkedList::print() {
+		Node* current = this->node;
+		while(current) {
+			cout << current->val;
+			if (current->next) {
+				cout << " -> ";
+			}
+			current = current->next;
+		}
+		cout << endl;
 	}
-}
 
-void LinkedList::removeList(Node*& head) {
-	while (head) {
-		Node* temp = head;
-		head = head->next;
-		delete temp;
+	void LinkedList::remove() {
+		Node*& current = this->node;
+		while (current) {
+			Node* temp = current;
+			current = current->next;
+			delete temp;
+		}
+	}
+
+	void LinkedList::reverse() {
+		Node *&current = this->node;
+		Node *prev = nullptr;
+		Node *next;
+
+		while(current) {
+			next = current->next;
+			current->next = prev;
+
+			prev = current;
+			current = next;
+		}
+		this->node = prev;
+	}
+
+	void test() {
+
+		Node* node = new Node(9, new Node(2, new Node(8, new Node(7, new Node(11, new Node(21, new Node(6)))))));
+
+		unique_ptr<LinkedList> llist = make_unique<LinkedList>(node);
+		llist->print();
+		llist->reverse();
+		llist->print();
 	}
 }

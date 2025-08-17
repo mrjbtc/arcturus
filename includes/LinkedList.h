@@ -3,6 +3,7 @@
 
 
 namespace NS_LinkedList {
+
    struct Node {
        int val;
        Node *next;
@@ -12,10 +13,16 @@ namespace NS_LinkedList {
    };
 
    class LinkedList {
+   private:
+      Node* node;
    public:
-      void printList(Node* head);
-      void removeList(Node*& head);
+      LinkedList(Node* node): node(node){}
+      void print();
+      void remove();
+      void reverse();
    };
+
+   void test();
 }
 
 #endif
