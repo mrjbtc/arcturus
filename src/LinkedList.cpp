@@ -46,7 +46,11 @@ namespace NS_LinkedList {
 		Node* node = new Node(9, new Node(2, new Node(8, new Node(7, new Node(11, new Node(21, new Node(6)))))));
 
 		unique_ptr<LinkedList> llist = make_unique<LinkedList>(node);
+		cout << " [Original] ";
 		llist->print();
+		cout << endl;
+		
+		cout << " [Reversed] ";
 		llist->reverse();
 		llist->print();
 	}
