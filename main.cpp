@@ -16,6 +16,9 @@
 #include "AddTwoNumbers.h"
 #include "ReverseNodesInKGroup.h"
 
+
+#include "Cafeteria.h"
+
 #include <thread>
 #include <functional>
 
@@ -56,7 +59,9 @@ int main () {
 
 	// NS_REVERSE_NODE_K_GROUP::test();
 
-	NS_LinkedList::test();
+	// NS_LinkedList::test();
+
+	// NS_CAFETERIA::test();
 	
 	return 0;
 }
