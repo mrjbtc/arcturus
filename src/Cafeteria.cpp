@@ -54,18 +54,14 @@ maxAdditional += (occupied - prev_right)/(K+1);
 #include <iostream>
 
 using namespace std;
-// Write any include statements here
 
 namespace NS_CAFETERIA {
   
   long long getMaxAdditionalDinersCount(long long N, long long K, int M, vector<long long> S) {
-    // Write your code here
-    
+  
     long long maxAdditional = 0;
-    
-    /* First Solution */
-    
     stable_sort(S.begin(), S.end());
+
     for (long long i = 0; i < M; i++) {
       
       long long occupied = S[i];
@@ -82,7 +78,6 @@ namespace NS_CAFETERIA {
 
     // the rest of M to N
     long long last_occupied = S[M-1];
-    cout << " (N - last_occupied)/K+1 " << ((N - last_occupied)/(K+1)) << " ";
     maxAdditional += (N - last_occupied)/(K+1);
 
     /*
