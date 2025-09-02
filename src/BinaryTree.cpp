@@ -5,6 +5,10 @@
 
 using namespace std;
 
+/*
+	https://en.wikipedia.org/wiki/Binary_tree
+
+*/
 namespace NS_BinaryTree {
 
 
@@ -44,6 +48,15 @@ namespace NS_BinaryTree {
 		return this->search(root->right, val);
 	}
 
+	/**
+	 * Pre-order
+	 * 
+	 * In pre-order, we always visit the current node; 
+	 * next, we recursively traverse the current node's left subtree, 
+	 * and then we recursively traverse the current node's right subtree. 
+	 * The pre-order traversal is a topologically sorted one, 
+	 * because a parent node is processed before any of its child nodes is done. 
+	 */ 
 	void BinaryTree::preOrderTraverse(Node* root) {
 		if (root == nullptr) {
 			return;
@@ -55,6 +68,13 @@ namespace NS_BinaryTree {
 		cout << endl;
 	}
 
+	/**
+	 * 
+	 * In-order
+	 * 
+	 * In in-order, we always recursively traverse the current node's left subtree; 
+	 * next, we visit the current node, and lastly, we recursively traverse the current node's right subtree. 
+	 */ 
 	void BinaryTree::inOrderTraverse(Node* root) {
 		if (root == nullptr) {
 			return;
@@ -67,6 +87,14 @@ namespace NS_BinaryTree {
 
 	}
 
+	/**
+	 * 
+	 * Post-order
+	 * 
+	 * In post-order, we always recursively traverse the current node's left subtree; 
+	 * next, we recursively traverse the current node's right subtree and then visit the current node. 
+	 * Post-order traversal can be useful to get postfix expression of a binary expression tree.
+	 */ 
 	void BinaryTree::postOrderTraverse(Node* root) {
 		if (root == nullptr) {
 			return;
