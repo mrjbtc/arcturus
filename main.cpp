@@ -1,13 +1,15 @@
 #include <iostream>
 #include <vector>
-#include <chrono>
 
+// Sorting
 #include "Bubble.h"
 #include "Selection.h"
 #include "Insertion.h"
 #include "Merge.h"
 #include "Heap.h"
 #include "Quick.h"
+
+// ...
 #include "Fibonacci.h"
 #include "LinkedList.h"
 #include "BinaryTree.h"
@@ -16,14 +18,14 @@
 #include "AddTwoNumbers.h"
 #include "ReverseNodesInKGroup.h"
 
-
+// Meta puzzles
 #include "Cafeteria.h"
+#include "DirectorOfPhotography.h"
 
 #include <thread>
 #include <functional>
 
 using namespace std;
-using namespace std::chrono;
 
 vector<int> random_n(size_t limit=10000) {
     vector<int> n;
@@ -57,7 +59,7 @@ int main () {
 
 	// NS_BinaryTree::test();
 
-	// NS_REVERSE_NODE_K_GROUP::test();
+	NS_REVERSE_NODE_K_GROUP::test();
 
 	// NS_LinkedList::test();
 
