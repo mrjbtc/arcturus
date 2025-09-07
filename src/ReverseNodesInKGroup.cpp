@@ -16,11 +16,11 @@
  * 
  * 
  *  Solution:
- *      1. Count the total nodes in the linked list divided by the K to identify how many times we do a reverse.
- * 		2. Get the boundary node, which is the stopping point for every K reverse.
- * 		3. REVERSE:       If the qoutient of total nodes / K is greater than zero then return a new head or root of the linkedlist reversed. 
- 		   DON'T REVERSE: Otherwise, return the original root/head.
- * 		4. Recursively repeat the process, (total nodes / K) times.
+ *      [1] Count the total nodes in the linked list divided by the K to identify how many times we do a reverse.
+ * 		[2] Get the boundary node, which is the stopping point for every K reverse.
+ * 		[3] REVERSE:       If the qoutient of total nodes / K is greater than zero then return a new head or root of the linkedlist reversed. 
+ 		   	DON'T REVERSE: Otherwise, return the original root/head.
+ * 		[4] Recursively repeat the process, (total nodes / K) times.
  */ 
 
 using namespace std;
