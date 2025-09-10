@@ -62,6 +62,12 @@ In the third case, there are 4 possible photographs, illustrated as follows:
 ..BA.P..
 ..B.AP..
 
+
+Solution:
+  [1] Identify each indexes of valid characters such as P, A, and B.
+  [2] For PAB permutations, loop throuch each indexes and make sure distance from P - A and A - B are between X - Y.
+  [3] Do the same thing for BAP permutations, and increment for each valid permutations.
+  
 */
 
 #include "DirectorOfPhotography.h"
@@ -70,14 +76,6 @@ In the third case, there are 4 possible photographs, illustrated as follows:
 
 using namespace std;
 
-/**
- * 
- * Solutions
- * [1] Identify each indexes of valid characters such as P, A, and B.
- * [2] For PAB permutations, loop throuch each indexes and make sure distance from P - A and A - B are between X - Y.
- * [3] Do the same thing for BAP permutations, and increment for each valid permutations.
- * 
- */ 
 namespace NS_DIRECTOR_OF_PHOTOGRAPHY {
 	
 
