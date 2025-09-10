@@ -59,11 +59,13 @@ int main () {
 
 	// NS_BinaryTree::test();
 
-	NS_REVERSE_NODE_K_GROUP::test();
+	// NS_REVERSE_NODE_K_GROUP::test();
 
 	// NS_LinkedList::test();
 
 	// NS_CAFETERIA::test();
+
+	NS_DIRECTOR_OF_PHOTOGRAPHY::test();
 	
 	return 0;
 }
