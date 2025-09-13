@@ -1,5 +1,3 @@
-#include "ReverseNodesInKGroup.h"
-#include <iostream>
 /**
  * 
  * Given the head of a linked list, reverse the nodes of the list k at a time, and return the modified list. 
@@ -22,6 +20,9 @@
  		   	DON'T REVERSE: Otherwise, return the original root/head.
  * 		[4] Recursively repeat the process, (total nodes / K) times.
  */ 
+
+#include "ReverseNodesInKGroup.h"
+#include <iostream>
 
 using namespace std;
 

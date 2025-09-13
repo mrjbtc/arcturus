@@ -17,10 +17,12 @@
 // leetcode
 #include "AddTwoNumbers.h"
 #include "ReverseNodesInKGroup.h"
+#include "TwoSum.h"
 
 // Meta puzzles
 #include "Cafeteria.h"
 #include "DirectorOfPhotography.h"
+#include "Kaitenzushi.h"
 
 #include <thread>
 #include <functional>
@@ -65,8 +67,13 @@ int main () {
 
 	// NS_CAFETERIA::test();
 
-	NS_DIRECTOR_OF_PHOTOGRAPHY::test();
+	// NS_DIRECTOR_OF_PHOTOGRAPHY::test();
+
+	// NS_KAITENZUSHI::test();
 	
+	 NS_TWO_SUM::test();
+
+
 	return 0;
 }
 

@@ -161,9 +161,10 @@ namespace NS_DIRECTOR_OF_PHOTOGRAPHY {
 		X = 1;
 		Y = 3;
 
-		cout << "C: " << C << endl;
+		cout << endl << C << endl;
 		count = getArtisticPhotographCount(N, C, X, Y);
-		cout << " count " << count << endl;
+		cout << "count " << count << endl;
+		cout << ((count == 1) ? "PASS" : "FAILED") << endl;
 
 		/* test case 2 */
 		N = 5;
@@ -171,9 +172,10 @@ namespace NS_DIRECTOR_OF_PHOTOGRAPHY {
 		X = 2;
 		Y = 3;
 
-		cout << "C: " << C << endl;
+		cout << endl << C << endl;
 		count = getArtisticPhotographCount(N, C, X, Y);
-		cout << " count " << count << endl;
+		cout << "count " << count << endl;
+		cout << ((count == 0) ? "PASS" : "FAILED") << endl;
 
 		/* test case 3 */
 		N = 8;
@@ -181,9 +183,10 @@ namespace NS_DIRECTOR_OF_PHOTOGRAPHY {
 		X = 1;
 		Y = 3;
 
-		cout << "C: " << C << endl;
+		cout << endl << C << endl;
 		count = getArtisticPhotographCount(N, C, X, Y);
-		cout << " count " << count << endl;
+		cout << "count " << count << endl;
+		cout << ((count == 3) ? "PASS" : "FAILED") << endl;
 
 	}
 }
