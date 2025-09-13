@@ -51,48 +51,66 @@ you'll skip the fourth and fifth dishes as they're each the same type as one of 
 
 In the third case, once you eat the first two dishes you won't eat any of the remaining dishes.
 
-Solutions:
-	[1]
+Solutions: This is O(n).
+	[1] Loop through N.
+	[2] Data structures for storing previous dish;
+		map - key/value pairs where key is the dish and value is boolean. 
+			- If no longer within the range K, then set to false.
+			- And it's O(1).
+		deque - Double ended queue where each dish will be push at the right end.
+			  - While the left end is no longer within the range K, hence, remove it.
+	[3] Increment counter for each dish, and save it to deque as previous with the range of K.
+	[4] At the same time insert the current dish into the map and set it to true.
+	[5] If the current dish is already in previous, decrement the counter.
+	[6] Remove the out of range distance K in the deque, as well as set it to false in the map.
+
+
+
+	NOTE: deque should be enough for this solution however, finding item within dequeue is resource intensive.
+		  Therefore optimizing it with map, which is O(1). See line 98.
+
 
 */
 
 #include "Kaitenzushi.h"
 #include <iostream>
 #include <deque>
-
-
+#include <map>
 
 using namespace std;
 
 namespace NS_KAITENZUSHI {
 
 	int getMaximumEatenDishCount(int N, vector<int> D, int K) {
-		int count = 0;
-
+		
+		int count = 0, size = 0, current_dish;
+		map<int, bool> m_previous;
+		deque<int> d_previous;
+		bool isPrevious = false;
+  
 
 		for(int i = 0; i < N; i++) {
 			
-			int current_dish = D[i];
-			int ctr = 1;
-			int idx = i;
-		
+		  	current_dish = D[i];
 			count++;
 
-
-			while(ctr <= K && i > 0) {
-				cout << " i: " << i << " current_dish: " << current_dish << " ctr: " << ctr << " idx: " << idx << " ";
-				int previous_dish = D[--idx];
-				if (previous_dish == current_dish) {
-					count--;
-					cout << " count-- " << count << endl;
-					ctr--;
-				}
-				cout << " count " << count << endl;
-				ctr++;
+			//if (isPrevious && find(previous.begin(), previous.end(), current_dish) != previous.end()) {
+			if (isPrevious && m_previous[current_dish] == true) {
+				count--;
+			} else {
+				d_previous.push_back(current_dish);
+				m_previous[current_dish] = true;
+       			size++;
 			}
+			
+			if(size > K && isPrevious) {
+				m_previous[d_previous.front()] = false;
+				d_previous.pop_front();
+        		size--;
+			}
+			isPrevious = true;
 		}
 
-		cout << "count " << count << " ";
 		return count;
 	}
 
@@ -105,8 +123,8 @@ namespace NS_KAITENZUSHI {
 		D = {1, 2, 3, 3, 2, 1};
 		K = 1;
 
-		//count = getMaximumEatenDishCount(N, D, K);
-		//cout << ((count == 5) ? "PASS" : "FAILED")<< endl;
+		count = getMaximumEatenDishCount(N, D, K);
+		cout << ((count == 5) ? "PASS" : "FAILED")<< endl;
 
 		// Test case 2
 		N = 6;
@@ -120,27 +138,8 @@ namespace NS_KAITENZUSHI {
 		N = 7;
 		D = {1, 2, 1, 2, 1, 2, 1};
 		K = 2;
-		//count = getMaximumEatenDishCount(N, D, K);
-		//cout << ((count == 2) ? "PASS" : "FAILED") << endl;
-
-		/*
-
-		 i: 1 current_dish: 2 ctr: 1 idx: 1  count 2
-		 i: 1 current_dish: 2 ctr: 2 idx: 0  count 2
-		 i: 2 current_dish: 3 ctr: 1 idx: 2  count 3
-		 i: 2 current_dish: 3 ctr: 2 idx: 1  count 3
-		 i: 3 current_dish: 3 ctr: 1 idx: 3  count-- 3
-		 count 3
-		 i: 3 current_dish: 3 ctr: 1 idx: 2  count 3
-		 i: 3 current_dish: 3 ctr: 2 idx: 1  count 3
-		 i: 4 current_dish: 2 ctr: 1 idx: 4  count 4
-		 i: 4 current_dish: 2 ctr: 2 idx: 3  count 4
-		 i: 5 current_dish: 1 ctr: 1 idx: 5  count 5
-		 i: 5 current_dish: 1 ctr: 2 idx: 4  count 5
-		 count 5 FAILED
-
-		*/
-
+		count = getMaximumEatenDishCount(N, D, K);
+		cout << ((count == 2) ? "PASS" : "FAILED") << endl;
 	}
 }
 

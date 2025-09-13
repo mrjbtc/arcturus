@@ -69,9 +69,9 @@ int main () {
 
 	// NS_DIRECTOR_OF_PHOTOGRAPHY::test();
 
-	// NS_KAITENZUSHI::test();
+	 NS_KAITENZUSHI::test();
 	
-	 NS_TWO_SUM::test();
+	// NS_TWO_SUM::test();
 
 
 	return 0;
