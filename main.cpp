@@ -1,5 +1,3 @@
-#include <iostream>
-#include <vector>
 
 // Sorting
 #include "Bubble.h"
@@ -14,6 +12,8 @@
 #include "LinkedList.h"
 #include "BinaryTree.h"
 
+// PUZZLES
+
 // leetcode
 #include "AddTwoNumbers.h"
 #include "ReverseNodesInKGroup.h"
@@ -23,9 +23,12 @@
 #include "Cafeteria.h"
 #include "DirectorOfPhotography.h"
 #include "Kaitenzushi.h"
+#include "RotaryLock.h"
 
-#include <thread>
-#include <functional>
+
+// Built in library 
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -69,9 +72,11 @@ int main () {
 
 	// NS_DIRECTOR_OF_PHOTOGRAPHY::test();
 
-	 NS_KAITENZUSHI::test();
+	// NS_KAITENZUSHI::test();
 	
 	// NS_TWO_SUM::test();
+
+	NS_ROTARY_LOCK::test();
 
 
 	return 0;
